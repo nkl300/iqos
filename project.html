@@ -1,0 +1,208 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      cursor: none;
+    }
+    .ph1 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 100;
+    }
+
+    .ph2 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 98;
+    }
+
+    .ph3 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 96;
+    }
+
+    .ph4 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 94;
+    }
+    .ph5 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 92;
+    }
+    .ph6 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 90;
+    }
+    .ph7 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 88;
+    }
+    .ph8 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 86;
+    }
+    .ph9 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 84;
+    }
+    .ph10 {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      z-index: 82;
+    }
+    .light {
+      width: 240vw;
+      height: 350vh;
+      position: absolute;
+      z-index: 110;
+      pointer-events: none;
+    }
+    .iqos {
+      width: 240px;
+      height: 240px;
+      position: absolute;
+    }
+    .text {
+      position: absolute;
+      top: 30px;
+      left: 450px;
+      right: 0;
+      z-index: 10000;
+      color: white;
+      margin: auto;
+      font-size: 40px;
+      font-family: "Lucida Console", Monaco, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class = "text"></div>
+  <img src = ./1.jpg alt ="" class = "ph1">
+
+  <img src = ./2.jpg alt ="" class = "ph2">
+
+  <img src = ./3.jpg alt ="" class = "ph3">
+
+  <img src = ./4.jpg alt ="" class = "ph4">
+
+  <img src = ./5.jpg alt ="" class = "ph5">
+
+  <img src = ./6.jpg alt ="" class = "ph6">
+
+  <img src = ./7.jpg alt ="" class = "ph7">
+
+  <img src = ./8.jpg alt ="" class = "ph8">
+
+  <img src = ./9.jpg alt ="" class = "ph9">
+
+  <img src = ./10.jpg alt ="" class = "ph10">
+
+  <img src="./light.png" alt="" class="light">
+
+
+  <script>
+    function soundClick() {
+    var audio = new Audio();
+    audio.src = 'barbariki.mp3';
+    audio.autoplay = true;
+    }
+    function alert1(text1) {
+      document.querySelector('.text').innerText = text1
+      setTimeout(() => {
+        document.querySelector('.text').innerText = '';
+      }, 1500)
+    }
+    var randomizer = [97, 91, 89, 83]
+    var rand = Math.floor(Math.random() * randomizer.length);
+    var iqos = document.createElement('img')
+    iqos.setAttribute('class', "iqos")
+    iqos.setAttribute('src', "https://www.табачная-империя.рф/upload/resize_cache/iblock/742/900_900_2/74274781f90b14cbb2a8e2a1884c7317.png")
+    iqos.style.zIndex = randomizer[rand];
+    iqos.style.align = "left";
+    document.body.appendChild(iqos);
+    if (rand == 1) {
+      iqos.style.top = "50px";
+      iqos.style.left = "1112px";
+    }
+    if (rand == 2) {
+      iqos.style.top = "173px";
+      iqos.style.left = "626px";
+    }
+    if (rand == 3) {
+      iqos.style.top = "398px";
+      iqos.style.left = "-42px";
+    }
+    if (rand == 4) {
+      iqos.style.top = "415px";
+      iqos.style.left = "417px";
+    }
+    document.body.addEventListener('mousemove', (event) => {
+      console.log(event.screenX, event.screenY);
+      var image = document.querySelector('.light');
+      image.style.left = (event.screenX - 1700).toString() + 'px';
+      image.style.top = (event.screenY - 1400).toString() + 'px';
+    });
+    document.querySelector('.ph1').addEventListener('click', (event) => {
+      event.target.remove();
+      alert1("Вы открыли шкаф")
+    });
+    document.querySelector('.ph2').addEventListener('click', (event) => {
+      event.target.remove();
+      alert1("Осмотрите шкаф")
+    });
+    document.querySelector('.ph3').addEventListener('click', (event) => {
+      event.target.remove();
+    });
+    document.querySelector('.ph4').addEventListener('click', (event) => {
+      event.target.remove();
+      alert1("Вы раздвинули занавески")
+    });
+    document.querySelector('.ph5').addEventListener('click', (event) => {
+      event.target.remove();
+      alert1("Вы прошли на балкон")
+    });
+    document.querySelector('.ph6').addEventListener('click', (event) => {
+      event.target.remove();
+      alert1("Это место тоже следует проверить")
+    });
+    document.querySelector('.ph7').addEventListener('click', (event) => {
+      event.target.remove();
+      alert1("Проверьте чемодан")
+    });
+    document.querySelector('.ph8').addEventListener('click', (event) => {
+      event.target.remove();
+    });
+    document.querySelector('.ph9').addEventListener('click', (event) => {
+      event.target.remove();
+    });
+    document.querySelector('.iqos').addEventListener('click', (event) => {
+      event.target.remove();
+      alert("Поздравляю, вы нашли Iqos)0))00)0)))");
+      soundClick();
+      });
+  </script>
+</body>
+</html>
